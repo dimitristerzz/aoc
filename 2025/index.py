@@ -25,8 +25,8 @@ for rotation in rotations:
             count+=1
     else:
         dial = (dial + steps) % 100
-        if dial>0
-        count+=1
+        if dial>0:
+            count+=1
 
     if dial == 0:
         count += 1
