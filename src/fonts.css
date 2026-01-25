@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Amore Christmas";
+  src: url("/fonts/Amore_Christmas.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Last Christmas";
+  src: url("/fonts/Last_Christmas.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Valentine Rosyalin";
+  src: url("/fonts/Valentine_Rosyalin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

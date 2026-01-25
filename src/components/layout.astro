@@ -1,0 +1,32 @@
+---
+const { title, description } = Astro.props;
+import "../global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:type" content="website" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      property="og:image"
+      content="https://dimitristerzz.io/adventofcode/logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://dimitristerzz.io/adventofcode/favicon.svg"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

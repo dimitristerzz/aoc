@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --color-primary: oklch(0.5194 0.2071 28.61);
+  --color-primary-to: oklch(0.912 0.0475 227.54);
+  --color-background: oklch(100% 0 0);
+  --color-text: oklch(0% 0 0);
+  --height-screen-dvh: 100svh;
+  --font-header: "Last Christmas", "sans-serif";
+  --font-subheader: "Amore Christmas", "sans-serif";
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeDown 0.6s ease forwards;
+}
+
+* {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+}
+
+.select-text * {
+  -webkit-user-drag: auto !important;
+  -khtml-user-drag: auto !important;
+  -moz-user-drag: auto !important;
+  -o-user-drag: auto !important;
+  user-select: text !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down {
+  opacity: 0;
+  animation: fadeDown 0.6s ease forwards;
+}
+
+@keyframes arrowDownUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  49% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.group:hover .icon-arrow {
+  animation: arrowDownUp 0.5s forwards;
+}
