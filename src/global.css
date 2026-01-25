@@ -3,7 +3,6 @@
 
 @theme {
   --color-primary: oklch(0.5194 0.2071 28.61);
-  --color-primary-to: oklch(0.912 0.0475 227.54);
   --color-background: oklch(100% 0 0);
   --color-text: oklch(0% 0 0);
   --height-screen-dvh: 100svh;
@@ -13,6 +12,11 @@
 
 @view-transition {
   navigation: auto;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-background);
 }
 
 @keyframes fadeDown {
@@ -29,22 +33,6 @@
 .animate {
   opacity: 0;
   animation: fadeDown 0.6s ease forwards;
-}
-
-* {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-select: none;
-}
-
-.select-text * {
-  -webkit-user-drag: auto !important;
-  -khtml-user-drag: auto !important;
-  -moz-user-drag: auto !important;
-  -o-user-drag: auto !important;
-  user-select: text !important;
 }
 
 ::-webkit-scrollbar {
