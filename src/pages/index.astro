@@ -18,22 +18,58 @@ const grouped = solutions.reduce((acc, s) => {
   <div
     class="flex flex-col justify-start items-center h-screen-dvh py-20 px-40 bg-background gap-16"
   >
-    <h1 class="font-header text-8xl text-primary">My Advent of Code</h1>
+    <h1 class="font-header text-9xl text-primary">My Advent of Code</h1>
 
-    <div class="flex flex-row gap-4">
-      <h1 class="font-subheader text-3xl text-primary">2024</h1>
-      <h1 class="font-subheader text-3xl text-primary/40">2025</h1>
-    </div>
+    <div class="flex flex-row gap-4 tabs">
+      <input type="radio" name="tab" id="tab-a" checked />
+      <label class="font-subheader text-3xl text-primary" for="tab-a">
+        2024
+      </label>
 
-    {Object.entries(grouped).map(([year, files]) => (
-      <div class="mb-8" key={year}>
-        {files.map((f) => (
-          <div class="border border-primary/80 p-4 rounded bg-primary/20 mb-2 text-text" key={f.name}>
-            <h2 class="font-bold">{f.name}</h2>
-            <pre class="whitespace-pre-wrap">{f.content}</pre>
-          </div>
-        ))}
+      <input type="radio" name="tab" id="tab-b" />
+      <label class="font-subheader text-3xl text-primary" for="tab-b">
+        2025
+      </label>
+
+      <div class="content a">
+        {
+          Object.entries(grouped)
+            .filter(([year]) => year === "2024")
+            .map(([year, files]) => (
+              <div class="mb-8" key={year}>
+                {files.map((f) => (
+                  <div
+                    class="border border-primary/80 p-4 rounded bg-primary/10 text-primary"
+                    key={f.name}
+                  >
+                    <h2 class="font-bold">{f.name}</h2>
+                    <pre class="whitespace-pre-wrap">{f.content}</pre>
+                  </div>
+                ))}
+              </div>
+            ))
+        }
       </div>
-    ))}
+
+      <div class="content b">
+        {
+          Object.entries(grouped)
+            .filter(([year]) => year === "2025")
+            .map(([year, files]) => (
+              <div class="mb-8" key={year}>
+                {files.map((f) => (
+                  <div
+                    class="border border-primary/80 p-4 rounded bg-primary/10 text-primary"
+                    key={f.name}
+                  >
+                    <h2 class="font-bold">{f.name}</h2>
+                    <pre class="whitespace-pre-wrap">{f.content}</pre>
+                  </div>
+                ))}
+              </div>
+            ))
+        }
+      </div>
+    </div>
   </div>
 </Layout>
