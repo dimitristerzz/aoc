@@ -1,3 +1,5 @@
 # `My Advent of Code`
 My effort in the yearly AoC.
-<span style="color:red">This text will be red</span>
+
+![red](https://img.shields.io/badge/Text-Red-red)
+![green](https://img.shields.io/badge/Text-Green-brightgreen)
