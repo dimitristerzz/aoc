@@ -1,7 +1,14 @@
 ---
-import Layout from "../components/layout.astro";
-import { getSolutions } from '../utils/readSolutions.js';
+import Layout from "../layout.astro";
+import { getSolutions } from "../readSolutions.js";
+
 const solutions = getSolutions();
+
+const grouped = solutions.reduce((acc, s) => {
+  if (!acc[s.folder]) acc[s.folder] = [];
+  acc[s.folder].push({ name: s.name, content: s.content });
+  return acc;
+}, {});
 ---
 
 <Layout
@@ -17,16 +24,16 @@ const solutions = getSolutions();
       <h1 class="font-subheader text-3xl text-primary">2024</h1>
       <h1 class="font-subheader text-3xl text-primary/40">2025</h1>
     </div>
-  </div>
 
-  <div class="flex flex-col gap-8 w-full">
-    {
-      solutions.map((s) => (
-        <div class="border p-4 rounded bg-gray-100 w-full">
-          <h2 class="font-bold text-xl">{s.name}</h2>
-          <pre class="whitespace-pre-wrap">{s.content}</pre>
-        </div>
-      ))
-    }
+    {Object.entries(grouped).map(([year, files]) => (
+      <div class="mb-8" key={year}>
+        {files.map((f) => (
+          <div class="border border-primary/80 p-4 rounded bg-primary/20 mb-2 text-text" key={f.name}>
+            <h2 class="font-bold">{f.name}</h2>
+            <pre class="whitespace-pre-wrap">{f.content}</pre>
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 </Layout>
