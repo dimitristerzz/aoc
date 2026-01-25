@@ -1,5 +1,7 @@
 ---
 import Layout from "../components/layout.astro";
+import { getSolutions } from '../utils/readSolutions.js';
+const solutions = getSolutions();
 ---
 
 <Layout
@@ -15,5 +17,16 @@ import Layout from "../components/layout.astro";
       <h1 class="font-subheader text-3xl text-primary">2024</h1>
       <h1 class="font-subheader text-3xl text-primary/40">2025</h1>
     </div>
+  </div>
+
+  <div class="flex flex-col gap-8 w-full">
+    {
+      solutions.map((s) => (
+        <div class="border p-4 rounded bg-gray-100 w-full">
+          <h2 class="font-bold text-xl">{s.name}</h2>
+          <pre class="whitespace-pre-wrap">{s.content}</pre>
+        </div>
+      ))
+    }
   </div>
 </Layout>
