@@ -1,2 +1,2 @@
-# `My Advent of Code ☃️`
-🟥⬜ My effort in the yearly AoC. 🟥⬜
+# `My Advent of Code ☃️🟥⬜`
+ My effort in the yearly AoC.
