@@ -1,14 +1,6 @@
-import requests
+from dtutils import getInput
 
-SESSION_COOKIE = "53616c7465645f5fd74bdb22c4af0e2bc8fff114a6ad5eff5a0e958455b0a1d04457be84407f3e7e84481554258eb684d71db896e2524ac9afd8e8edff4f7e01"
-
-url = "https://adventofcode.com/2024/day/2/input"
-
-headers = {
-    "Cookie": f"session={SESSION_COOKIE}",
-}
-
-response = requests.get(url, headers=headers).text
+response = getInput("https://adventofcode.com/2024/day/2/input")
 
 def readRowsFromResponse(response):
     rows = []

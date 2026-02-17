@@ -1,15 +1,6 @@
-import requests
+from dtutils import getInput
 
-SESSION_COOKIE = "53616c7465645f5f5d4b262b6473136e17634719c6129df046cd548d781b5b4523d9326759da7574a67d8dc5176ec4d122d9420f3e04c5a92b9e00ca2670dd58"
-
-url = "https://adventofcode.com/2025/day/1/input"
-
-headers = {
-    "Cookie": f"session={SESSION_COOKIE}",
-}
-
-response = requests.get(url, headers=headers).text
-
+response = getInput("https://adventofcode.com/2025/day/1/input")
 
 rotations = response.splitlines()
 dial = 50
